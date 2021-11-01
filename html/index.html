@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>チーズアカデミー</title>
+  <meta name="description" content=“世界を変えるチーズを作ろう。チーズアカデミーは、チーズ職人を養成するための学校です。”>
+  <meta property="og:title" content="チーズアカデミー">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="#" />
+  <meta property="og:site_name" content="チーズアカデミー" />
+  <meta property="og:description" content="世界を変えるチーズを作ろう。チーズアカデミーは、チーズ職人を養成するための学校です。" />
+  <meta name="format-detection" content="telephone=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="./css/sanitize.css" />
+  <link rel="stylesheet" type="text/css" href="./css/jquery.circliful.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <!-- あらかじめcssを読み込んでいるので設定しなくてOK-->
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-hero">
+      <!-- <h1 class="header-hero__title">セカイを変えるチーズテックを作ろう</h1>
+      <p class="header-hero__subtitle">チーズエンジニア養成学校「チーズアカデミーFUKUOKA」</p> -->
+      <div class="result">
+        <div class="result__title">
+          <h1>チーズの保存環境を監視中</h1>
+          <p id="js-date"></p>
+        </div>
+        <div class="result__box">
+          <p class="result__box__head">Temperature</p>
+          <div class="loader"></div>
+          <div id="js-temp"></div>
+        </div>
+        <div class="result__box">
+          <p class="result__box__head">Humidity</p>
+          <div class="loader"></div>
+          <div id="js-hum"></div>
+        </div>
+        <div class="result__notice">
+          <p>チーズの最適な保存環境は、温度5〜10&#x2103; 湿度80〜85%と言われています。</p>
+        </div>
+      </div>
+      <!-- <canvas id="js-chart"></canvas> -->
+    </div>
+    <div class="wrapper">
+      <div class="header-inner">
+        <h1 class="header__logo">
+          <a href="#">
+            <img src="./img/header_logo.png" alt="Cheese ACADEMY TOKYO">
+          </a>
+        </h1>
+        <nav class="header__nav">
+          <ul class="g-nav">
+            <li class="g-nav__item">
+              <a href="#about">about</a>
+            </li>
+            <li class="g-nav__item">
+              <a href="#course">course</a>
+            </li>
+            <li class="g-nav__item">
+              <a href="#news">news</a>
+            </li>
+            <li class="g-nav__item">
+              <a href="#access">access</a>
+            </li>
+            <li class="g-nav__item">
+              <a href="#contact">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-about" id="about">
+      <div class="wrapper">
+        <h2 class="section-title section-title--secondary">about<span>この作品について</span></h2>
+        <div class="section-lead">
+          <p>Raspberry Pi4にBME280センサーモジュールを接続し、温度・湿度・気圧を測定します。<br>Pi側のPythonのプログラムから、HTTP通信のPOSTメソッドを使って、JSONデータをWEBサーバーへ送信します。</p>
+          <p><img src="./img/pi.jpg" width="400" height="278"></p>
+          <p>WEBサーバー側にはMySQLで作ったデータベースを用意しておきデータを格納します。<br>そしてJavaScriptでチーズの保存環境に適した温湿度かどうかを判定し、ブラウザに結果を表示させています。</p>
+          <p>測定とデータ送信は、1時間ごとのcronを回しているので、定期的にチーズの保存環境を把握できます。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="about-slider">
+      <div>
+        <img src="img/1.png">
+      </div>
+      <div>
+        <img src="img/2.png">
+      </div>
+      <div>
+        <img src="img/3.png">
+      </div>
+      <div>
+        <img src="img/4.png">
+      </div>
+    </div>
+
+    <section class="section section-course" id="course">
+      <div class="wrapper">
+        <h2 class="section-title">course</h2>
+        <div class="section-course__lead section-lead">
+          <p>未経験からでもスタートができるよう，カリキュラムは多くの専門家や<br>現役チーズ職人のアドバイスのもと，作られました．</p>
+        </div>
+      </div>
+      <div class="course-2cols">
+        <div class="course-2cols__img">
+          <img src="img/course_01.jpg">
+        </div>
+        <div class="course-2cols__txt">
+          <div>
+            <h3 class="head">本格的な農園を使った実地研修</h3>
+            <p>チーズアカデミーでは，本格的な農園を使った実地研修を<br>行うことができます．プロとして活躍するチーズ職人も<br>使用するような，広大で環境も整った農園を余すところ<br>なく使い，卒業時には本格的なチーズを自分の力で作れる<br>実践力の養成を目指します．</p>
+          </div>
+        </div>
+      </div>
+      <div class="course-2cols course-2cols--reverse">
+        <div class="course-2cols__img">
+          <img src="img/course_02.jpg">
+        </div>
+        <div class="course-2cols__txt">
+          <div>
+            <h3 class="head">必要な知識もしっかりと取得</h3>
+            <p>チーズ作りには，しっかりとした食に関する知識が<br>欠かせません．チーズアカデミーでは，一流講師陣による，<br>チーズ作りに必要ないろはを余すところなく学べます．<br>チーズそのものでなく，栄養学全般を学ぶことも<br>可能ですので，チーズ以外への展開も夢ではないでしょう．</p>
+          </div>
+        </div>
+      </div>
+      <div class="course-2cols">
+        <div class="course-2cols__img">
+          <img src="img/course_03.jpg">
+        </div>
+        <div class="course-2cols__txt">
+          <div>
+            <h3 class="head">卒業制作はティスティング審査あり</h3>
+            <p>チーズアカデミーでは最後の2ヶ月間で卒業制作を実施．<br>卒業制作として，チーズ作りを実際に行います．卒業後，<br>一般参加によるティスティング審査があるため，作り手の<br>目線だけでなく，消費者の目線から，卒業制作作品としての<br>チーズを，しっかりと評価いただくことができます．</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-news" id="news">
+      <div class="wrapper">
+        <h2 class="section-title section-title--secondary">news<span>ニュース</span></h2>
+        <ul class="news-list">
+          <li class="news-list__item">
+            <a class="thumb" href="#"><img src="img/news_img.jpg"></a>
+            <time datetime="2016-11-18">2016/11/18</time>
+            <h3 class="title"><a href="#">チーズアカデミー卒業生のコスゲさんによるチーズだけをふんだんに使用した話題のピザ屋「Kosuge Pizza」が天神でオープンしました！</a></h3>
+          </li>
+          <li class="news-list__item">
+            <a class="thumb" href="#"><img src="img/news_img.jpg"></a>
+            <time datetime="2016-11-18">2016/11/18</time>
+            <h3 class="title"><a href="#">チーズアカデミー卒業生のコスゲさんによるチーズだけをふんだんに使用した話題のピザ屋「Kosuge Pizza」が天神でオープンしました！</a></h3>
+          </li>
+          <li class="news-list__item">
+            <a class="thumb" href="#"><img src="img/news_img.jpg"></a>
+            <time datetime="2016-11-18">2016/11/18</time>
+            <h3 class="title"><a href="#">チーズアカデミー卒業生のコスゲさんによるチーズだけをふんだんに使用した話題のピザ屋「Kosuge Pizza」が天神でオープンしました！</a></h3>
+          </li>
+        </ul>
+        <div class="news-list-more">
+          <a href="#">More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-access section--gray" id="access">
+      <div class="wrapper">
+        <h2 class="section-title">access<span>会社情報</span></h2>
+      </div>
+      <div class="access-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5215.480250178845!2d130.39160840263617!3d33.586549192310954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191aa0929fbdf%3A0xd5e535b27b5236c6!2z44K444O844K644Ki44Kr44OH44Of44O8!5e0!3m2!1sja!2sjp!4v1634387483090!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="wrapper">
+        <div class="access-info">
+          <dl>
+            <dt>学校名</dt>
+            <dd>チーズアカデミーFUKUOKA</dd>
+          </dl>
+          <dl>
+            <dt>事務所所在地</dt>
+            <dd>〒810-0041<br>福岡県福岡市中央区大名1丁目3-41 プリオ大名ビル1F</dd>
+          </dl>
+          <dl>
+            <dt>tel</dt>
+            <dd>000-000-0000</dd>
+          </dl>
+          <dl>
+            <dt>fax</dt>
+            <dd>999-999-9999</dd>
+          </dl>
+          <dl>
+            <dt>mail</dt>
+            <dd>
+              <script type="text/javascript">
+              function converter(M){
+                var str="", str_as="";
+                for(var i=0;i<M.length;i++){
+                  str_as = M.charCodeAt(i);
+                  str += String.fromCharCode(str_as + 1);
+                }
+                return str;
+              }
+              var ad = converter(String.fromCharCode(99,116,108,108,120,63,98,103,100,100)+String.fromCharCode(114,100,96,98,96,99,100,108,120,45,115,110,106,120,110));
+              document.write("<a href=\"mai"+"lto:"+ad+"\">"+ad+"<\/a>");
+              </script>
+              <noscript>JavaScriptをONにしてください</noscript>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-contact" id="contact">
+      <div class="wrapper">
+        <h2 class="section-title">contact<span>説明会お申し込み・お問い合わせ</span></h2>
+        <div class="section-lead">
+          <p>ぜひ1度，足を運んでみませんか．説明会は随時開催中．<br>その他，お問い合わせもお気軽にどうぞ．お待ちしております．</p>
+          <p>※チーズアカデミーは実際には存在しません．<br>間違っても問い合わせしないようお願いいたします．</p>
+        </div>
+        <div class="contact-form">
+          <form action="#" method="post">
+            <dl class="form-list">
+              <dt>名前</dt>
+              <dd><input type="text" name="name"></dd>
+            </dl>
+            <dl class="form-list">
+              <dt>カナ</dt>
+              <dd><input type="text" name="kana"></dd>
+            </dl>
+            <dl class="form-list">
+              <dt>メールアドレス</dt>
+              <dd><input type="email" name="email"></dd>
+            </dl>
+            <dl class="form-list form-list--secondary">
+              <dt>志望動機</dt>
+              <dd>
+                <label><input type="radio" name="motivation" value="起業をしたい">起業をしたい</label>
+                <label><input type="radio" name="motivation" value="チーズ系企業に就職・転職したい">チーズ系企業に就職・転職したい</label>
+                <label><input type="radio" name="motivation" value="チーズと関わる仕事をしており，仕事に生かしたい">チーズと関わる仕事をしており，仕事に生かしたい</label>
+                <label><input type="radio" name="motivation" value="チーズの教養を身につけたい">チーズの教養を身につけたい</label>
+              </dd>
+            </dl>
+            <dl class="form-list form-list--secondary">
+              <dt>詳細</dt>
+              <dd><textarea name="content"></textarea></dd>
+            </dl>
+            <div class="form-submit">
+              <button type="submit">送信</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <p class="footer__copy"><small>copyrights 2016-2018 Cheeese Academy Fukuoka All RIghts Reserved.</small></p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+  <script src="./js/jquery.circliful.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/common.js"></script>
+</body>
+
+</html>
